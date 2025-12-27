@@ -30,5 +30,8 @@ variable "key_name" {
 }
 
 output "instance_id" {
-  value = 
+  value = "aws_instance.myinstance.public_ip"
+}
+output "instance_id" {
+  value = aws_instance.myinstance.id
 }
