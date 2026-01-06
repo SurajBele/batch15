@@ -11,4 +11,6 @@
         msg: "{{animal}}"
     - name: print animal3
       debug:
-        msg: "lion"
+        msg: "{{animal}}"
+      vars:
+        animal: "lion"
