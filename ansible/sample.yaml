@@ -1,6 +1,14 @@
 - name: my 1st playbook
-  hosts: localhost
+  hosts: all
+  vars:
+    animal: "tiger"  #global variable
   tasks:
-    - name: print welcome
+    - name: print animal
       debug:
-        msg: "hello welcome to ansible"
+        msg: "{{animal}}"
+    - name: print animal2
+      debug:
+        msg: "{{animal}}"
+    - name: print animal3
+      debug:
+        msg: "lion"
