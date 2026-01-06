@@ -25,4 +25,4 @@
       register: myhostvalue
     - name: print hostname value from register
       debug:
-        msg: "{{myhostvalue}}"
+        msg: "{{myhostvalue.stdout}}"
