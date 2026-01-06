@@ -1,5 +1,9 @@
-provider "aws" {
-  region = "us-east-1"
+terraform {
+  backend "s3" {
+    bucket = "batch151234"
+    region = "us-east-1"
+    key = "tfstate"
+  }
 }
 resource "aws_security_group" "mysg" {
   name        = "${var.project}-mysg"
