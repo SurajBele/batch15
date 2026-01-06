@@ -20,3 +20,9 @@
         msg: "{{animal}}"
       vars:
         animal: "lion"
+    - name: register value example
+      shell: hostname
+      register: myhostvalue
+    - name: print hostname value from register
+      debug:
+        msg: "{{myhostvalue}}"
