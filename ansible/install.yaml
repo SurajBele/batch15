@@ -1,0 +1,12 @@
+- name: install apache2
+  hosts: all
+  tasks:
+    - name: install httpd if os is redhat
+      yum:
+       - name: httpd
+         state: latest
+    - name: install apache2 if os is debian
+      apt: 
+       - name: install apache2
+         state: latest
+
