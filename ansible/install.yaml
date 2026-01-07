@@ -9,7 +9,7 @@
       when: ansible_os_family == "RedHat"
     - name: install apache2 if os is debian
       apt: 
-       name: install apache2
+       name: apache2
        state: latest
       when: ansible_os_family == "Debian"
 
