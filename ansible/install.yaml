@@ -6,10 +6,10 @@
       yum:
        name: httpd
        state: latest
-      when: ansible_os_family="RedHat"
+      when: ansible_os_family == "RedHat"
     - name: install apache2 if os is debian
       apt: 
        name: install apache2
        state: latest
-      when: ansible_os_family="Debian"
+      when: ansible_os_family == "Debian"
 
