@@ -20,11 +20,10 @@
       path: /var/www/html/index.html
       regexp: '^<h1>'
       line: "<h1> Hello here single line added</h1>"
-  - name: add one line in index.html
+  - name: add liins block in index.html
     blockinfile:
       path: /var/www/html/index.html
-      regexp: '^<h1>'
       block: |
-         "<h1> Hello here is line1 added</h1>"
-         "<h1> Hello here is line2 added</h1>"
-         "<h1> Hello here is line3 added</h1>"
+        "<h1> Hello here is line1 added</h1>"
+        "<h1> Hello here is line2 added</h1>"
+        "<h1> Hello here is line3 added</h1>"
