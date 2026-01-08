@@ -15,3 +15,8 @@
     copy:
       src: ./index.html
       dest: /var/www/html/index.html
+  - name: add one line in index.html
+    lineinfile:
+      path: /var/www/html/index.html
+      regexp: '^<h1>'
+      line: "<h1> Hello here single line added</h1>"
