@@ -1,0 +1,10 @@
+- name: install multipal things
+  hosts: all
+  tasks:
+    - name: print items
+      debug:
+        msg: "{{item}}"
+      loop:
+       - apple
+       - mango
+       - orange
