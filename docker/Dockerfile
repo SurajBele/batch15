@@ -7,12 +7,13 @@
 # CMD [ "apache2ctl", "-D", "FOREGROUND" ]
 
 FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install openjdk-21-jdk -y
+    apt-get install openjdk-21-jdk -y curl
 ENV TOMCAT_VERSION=9.0.113
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v{TOMCAT_VERSION}/bin/apache-tomcat-{TOMCAT_VERSION}.tar.gz /opt
-WORKDIR /opt
-RUN tar -xzf apache-tomcat-{TOMCAT_VERSION}.tar.gz
+
+RUN curl https://dlcdn.apache.org/tomcat/tomcat-9/v{TOMCAT_VERSION}/bin/apache-tomcat-{TOMCAT_VERSION}.tar.gz \
+| tar -xzf -C /opt
 WORKDIR /opt/apache-tomcat-{TOMCAT_VERSION}/bin
 EXPOSE 8080
 # start tomcat
