@@ -6,6 +6,8 @@ metadata:
     app: my-deploy
 spec:
   replicas: 3
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: my-deploy-pod
@@ -17,8 +19,8 @@ spec:
         env: devops
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: my-web
+          image: httpd
           ports:
           - name: http
             containerPort: 80
