@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-dmon
+  labels:
+    app: my-dmon
+spec:
+  selector:
+    matchLabels:
+      app: my-dmon
+  template:
+    metadata:
+      name: my-dmon-pod
+      labels:
+        app: my-dmon
+        env: devops
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+          - name: http
+            containerPort: 80
