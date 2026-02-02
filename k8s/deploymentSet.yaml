@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: my-web
-          image: httpd
+          image: nginx
           ports:
           - name: http
             containerPort: 80
