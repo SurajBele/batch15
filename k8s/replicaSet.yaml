@@ -4,6 +4,8 @@ metadata:
   name: my-rset
   labels:
     app: my-replica
+  Namespace:
+    name: mywork
 spec:
   replicas: 3
   selector:
