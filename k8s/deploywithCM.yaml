@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deploy
+  labels:
+    app: my-deploy
+spec:
+  replicas: 3
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: my-deploy-pod
+  template:
+    metadata:
+      name: my-deploy-pod
+      labels:
+        app: my-deploy-pod
+        env: devops
+    spec:
+      containers:
+        - name: my-web
+          image: nginx
+          ports:
+          - name: http
+            containerPort: 80
+          env:
+          - name: APP-USER
+            valueFrom:
+             cofigMapKeyRef:
+               name: my-variables
+               key: username
+          - name: APP-NAME
+            value: myapp
+          - name: ROOT_PASSWORD
+            valueFrom:
+              ConfigMapKeyRef:
+                name: my-variables
+                key: password
