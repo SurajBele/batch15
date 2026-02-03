@@ -1,15 +1,10 @@
 apiVersion: apps/v1
-kind: statefulSet
+kind: StatefulSet
 metadata:
   name: my-state
   labels:
     app: my-state
 spec:
-  strategy: 
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 3
-      maxUnavailable: 1
   selector:
     matchLabels:
       app: my-state
