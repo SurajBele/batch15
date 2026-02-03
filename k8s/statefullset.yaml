@@ -26,6 +26,6 @@ spec:
           value: myapp
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: my-variables
+            secretKeyRef:
+              name: my-variables-secrets
               key: password
