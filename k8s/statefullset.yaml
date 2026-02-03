@@ -16,16 +16,16 @@ spec:
         env: devops
     spec:
       containers:
-        - name: my-web
-          image: mariadb
-          ports:
-          - name: dbport
-            containerPort: 3306
-          env:
-          - name: APP-NAME
-            value: myapp
-          - name: MARIADB_ROOT_PASSWORD
-            valueFrom:
-              ConfigMapKeyRef:
-                name: my-variables
-                key: password
+      - name: my-web
+        image: mariadb
+        ports:
+        - name: dbport
+          containerPort: 3306
+        env:
+        - name: APP-NAME
+          value: myapp
+        - name: MARIADB_ROOT_PASSWORD
+          valueFrom:
+            ConfigMapKeyRef:
+              name: my-variables
+              key: password
