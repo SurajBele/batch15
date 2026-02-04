@@ -27,5 +27,5 @@ spec:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: my-variables-secrets
+              name: my-secrets
               key: password
