@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apple-ingress
+  labels:
+    name: apple-ingress
+spec:
+  rules:
+  - host: apple.com  # Domain for apple-home-service
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"  # Matches all requests
+        backend:
+          service:
+            name: apple-home-service  # Routes traffic to this service
+            port: 
+              number: 80
+  - host: apple.mobile.com  # Domain for apple-mobile-service
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"  # Matches all requests
+        backend:
+          service:
+            name: apple-mobile-service  # Routes traffic to this service (fixed typo)
+            port: 
+              number: 80
