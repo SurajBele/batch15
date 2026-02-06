@@ -16,11 +16,11 @@ spec:
             name: apple-home-service  # Routes traffic to this service
             port: 
               number: 80
-  - host: apple.mobile.com  # Domain for apple-mobile-service
+  - host: apple/mobile.com  # Domain for apple-mobile-service
     http:
       paths:
       - pathType: Prefix
-        path: "/"  # Matches all requests
+        path: "/mobile"  # Matches all requests
         backend:
           service:
             name: apple-mobile-service  # Routes traffic to this service (fixed typo)
