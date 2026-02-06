@@ -3,6 +3,6 @@ kind: Role
 metadata:
   name: myrole
 rules:
- - apiGroup: [""]
-   resources: ["pods"]
-   verbs: ["get", "list", "watch"]
+  - apiGroup: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
