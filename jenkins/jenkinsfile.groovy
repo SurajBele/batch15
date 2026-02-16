@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
+                git branch: 'main', url: 'https://github.com/SurajBele/studentdata.git'
                 echo "pull success"
             }
         }
