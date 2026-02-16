@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh '/opt/apache-maven-3.9.12/bin/mvn clean package'
                 echo " build success"
             }
         }
