@@ -24,6 +24,13 @@ pipeline {
                 echo "testing success"
             }
         }
+
+        stage('quality-gate') {
+            steps {
+                waitForQualityGate abortPipeline: true, credentialsId: 'sonar-token'
+                echo "deploy success"
+            }
+        }
         stage('Deploy') {
             steps {
                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-pass', path: '', url: 'http://13.201.63.76:8080')], contextPath: '/', war: '**/*.war'
